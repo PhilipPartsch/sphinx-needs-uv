@@ -51,7 +51,10 @@ jobs:
         ls -al
 
     - name: Lint sphinx files
-      run: uv run sphinx-lint
+      run: |
+        ls -al
+        uv run sphinx-lint
+        ls -al
 
     - name: Render Sphinx Documentation
       run: >
