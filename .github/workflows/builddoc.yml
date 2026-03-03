@@ -45,7 +45,7 @@ jobs:
 
     - name: Install Python dependencies
       run: |
-        uv sync --project ./components/comp/sphinx-needs
+        uv sync --project ./components/comp_1/sphinx-needs
 
     - name: Render Sphinx Documentation
       run: >
