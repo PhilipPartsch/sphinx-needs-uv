@@ -1,5 +1,5 @@
-#public/
-#_tools/
+public/
+_tools/
 
 # MacOS
 .DS_Store
