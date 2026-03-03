@@ -45,16 +45,15 @@ jobs:
 
     - name: Install Python dependencies
       run: |
-        ls -al
-        uv venv
-        uv sync --project ./components/comp_1/sphinx-needs
-        ls -al
+        cd components/comp_1/sphinx-needs
+        ls-al
+        uv sync
+        ls-al
 
     - name: Lint sphinx files
       run: |
-        ls -al
+        ls-al
         uv run sphinx-lint
-        ls -al
 
     - name: Render Sphinx Documentation
       run: >
