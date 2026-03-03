@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sphinx-needs-uv"
+version = "0.1.0"
+description = "Prototype repository for evaluating Sphinx-Needs with the `uv` dependency manager"
+authors = [
+    { name = "Philip Partsch", email = "95444300+PhilipPartsch@users.noreply.github.com" },
+]
+license = { text = "MIT" }
+readme = "README.md"
+keywords = ["sphinx", "documentation", "needs", "uv"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "sphinx>=7.0",
+    "sphinxcontrib-plantuml>=0.20",
+    "sphinx-needs==6.3.0",
+    "matplotlib",
+    "tabulate",
+    "sphinx-rtd-theme",
+    "sphinx-lint",
+]
+
+[tool.uv]
+# basic configuration for uv; see uv documentation for available options
+# lock = true  # uncomment to ensure uv.lock is tracked
