@@ -46,7 +46,8 @@ jobs:
     - name: Install Python dependencies
       run: |
         ls -al
-        uv sync --project ./components/comp_1/sphinx-needs --venv ./
+        uv venv
+        uv sync --project ./components/comp_1/sphinx-needs
         ls -al
 
     - name: Lint sphinx files
