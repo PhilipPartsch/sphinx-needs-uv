@@ -4,3 +4,31 @@ id_length = 3
 id_regex = "^[A-Za-z0-9_]{5,}"
 build_json = true
 
+[[needs.types]]
+directive = "aou"
+title = "Assumption of Use"
+prefix = "AOU__"
+color = "#FF0000"
+style = "node"
+
+[needs.fields.safety]
+name = "safety"
+description = "safety level"
+schema = {type = "string", enum = [ "QM", "ASIL-A", "ASIL-B", "ASIL-C", "ASIL-D" ]}
+default = "QM"
+
+[needs.fields.security]
+name = "security"
+description = "security level"
+schema = {type = "string", enum = [ "No", "Yes" ]}
+default = "No"
+
+[needs.links.satisfies]
+incoming = "satisfied by"
+outgoing = "satisfies"
+copy = true
+style = "#000000"
+style_part = "#000000"
+style_start = "-"
+style_end = "->"
+allow_dead_links = false

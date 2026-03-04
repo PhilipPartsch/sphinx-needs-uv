@@ -19,7 +19,7 @@ classifiers = [
 dependencies = [
     "sphinx>=7.0",
     "sphinxcontrib-plantuml>=0.20",
-    "sphinx-needs==6.3.0",
+    "sphinx-needs==7.0.0",
     "matplotlib",
     "tabulate",
     "sphinx-rtd-theme",
