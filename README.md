@@ -7,9 +7,8 @@ In this repo I evaluate Sphinx-Needs with uv on an automated GitHub setup.
 The Idea is to have indepenet components.
 
 So:
-# switch to the component root.
-cd ./components/<component>/sphinx-needs
+
 # update dependecies from pyproject.toml within the component folder
-uv sync
+uv sync --project ./components/comp_1/sphinx-needs
 # build documentation
-uv run sphinx-build ./ ../../../public/<component>
+uv run --project ./components/comp_1/sphinx-needs sphinx-build ./ ../../../public/<component>
