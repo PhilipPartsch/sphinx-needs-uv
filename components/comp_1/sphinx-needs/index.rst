@@ -18,4 +18,28 @@ Documentation for the Component 1
    It is in the responsibility of the integrator to ensure that the
    component is used in a way that is compliant with the assumptions of use.
 
+.. aou:: Implementation of the component
+   :id: AOU__COMP_1__IMPLEMENTATION
+   :safety: ASIL-B
+   :security: Yes
+
+   The source code of the component is provided in the src folder. It is implemented in C++.
+
+.. aou:: Testing of the component
+   :id: AOU__COMP_1__TESTING
+   :safety: ASIL-B
+   :security: Yes
+
+   Tests are provided in the component, as python scripts.
+
+*Content from test implementation file:*
+
+.. src-trace::
+   :project: srccpp
+
+*Content from test implementation file:*
+
+.. src-trace::
+   :project: srcpy
+
 

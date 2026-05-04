@@ -11,6 +11,13 @@ prefix = "AOU__"
 color = "#FF0000"
 style = "node"
 
+[[needs.types]]
+directive = "impl"
+title = "Implmentation"
+prefix = "IMPL__"
+color = "#00FF00"
+style = "node"
+
 [needs.fields.safety]
 name = "safety"
 description = "safety level"

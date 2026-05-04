@@ -69,3 +69,9 @@ plantuml_output_format = 'svg'
 # --  sphinx-needs configuration
 
 needs_from_toml = "ubproject.toml"
+
+# sphinx_codelinks
+extensions.append("sphinx_codelinks")
+
+# https://codelinks.useblocks.com/components/configuration.html
+src_trace_config_from_toml = "codelinks.toml"

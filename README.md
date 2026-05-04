@@ -10,5 +10,6 @@ So:
 
 # update dependecies from pyproject.toml within the component folder
 uv sync --project ./components/comp_1/sphinx-needs
+
 # build documentation
-uv run --project ./components/comp_1/sphinx-needs sphinx-build ./ ../../../public/comp_1
+uv run --project ./components/comp_1/sphinx-needs sphinx-build ./components/comp_1/sphinx-needs ./public/comp_1
