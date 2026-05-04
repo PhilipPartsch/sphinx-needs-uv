@@ -39,3 +39,12 @@ style_part = "#000000"
 style_start = "-"
 style_end = "->"
 allow_dead_links = false
+
+[parse.extend_directives.src-trace]
+argument = false
+options = true
+content = false
+content_required = false
+parse_content = false
+description = "A directive to generate need items from one-line definition"
+extension = "sphinx-codelinks" # The extension that provides the directive

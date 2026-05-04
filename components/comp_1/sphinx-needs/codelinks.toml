@@ -1,27 +1,31 @@
 [codelinks]
 # Configuration for source tracing
 set_local_url = true            # Set to true to enable local code html and URL generation
-local_url_field = "local-url"   # Need's field name for local URL
+local_url_field = "local_url"   # Need's field name for local URL
 set_remote_url = true           # Set to true to enable remote url to be generated
-remote_url_field = "remote-url" # Need's field name for remote URL
+remote_url_field = "remote_url" # Need's field name for remote URL
+
+# https://codelinks.useblocks.com/components/configuration.html#outdir
+outdir = "output"
 
 [codelinks.projects.srcpy]
-remote_url_pattern = "https://github.com/avengineers/hammocking/blob/{commit}/{path}#L{line}"
+remote_url_pattern = "https://github.com/PhilipPartsch/sphinx-needs-uv/blob/{commit}/{path}#L{line}"
 
 [codelinks.projects.srcpy.source_discover]
 src_dir = "../src/py"
 include = ["**/*.py"]
 comment_type = "python"
 
-[codelinks.projects.srccpp]
-remote_url_pattern = "https://github.com/avengineers/hammocking/blob/{commit}/{path}#L{line}"
-
-[codelinks.projects.srccpp.source_discover]
-src_dir = "../src/c++"
-include = ["**/*.cpp", "**/+.hpp"]
-comment_type = "cpp"
+[codelinks.projects.srcpy.analyse]
+get_need_id_refs = true
+get_oneline_needs = true
+get_rst = true
 
 [codelinks.projects.srcpy.analyse.oneline_comment_style]
+start_sequence = "@"
+# End sequences is newline by default. Whether it is "\n" or "\r\n" depending on the platform
+end_sequence = "\n"
+field_split_char = ","
 # Fields that are defined in the oneline comment style
 needs_fields = [
     { "name" = "title", "type" = "str" },
@@ -29,3 +33,38 @@ needs_fields = [
     { "name" = "type", "type" = "str", "default" = "impl" },
     { "name" = "links", "type" = "list[str]", "default" = [] },
 ]
+
+[codelinks.projects.srcpy.analyse.need_id_refs]
+markers = ["@need-ids:"]
+
+[codelinks.projects.srcpy.analyse.marked_rst]
+start_sequence = "@rst"
+end_sequence = "@endrst"
+
+[codelinks.projects.srccpp]
+remote_url_pattern = "https://github.com/PhilipPartsch/sphinx-needs-uv/blob/{commit}/{path}#L{line}"
+
+[codelinks.projects.srccpp.source_discover]
+src_dir = "../src/c++"
+include = ["**/*.cpp", "**/+.hpp"]
+comment_type = "cpp"
+
+[codelinks.projects.srccpp.analyse.oneline_comment_style]
+start_sequence = "@"
+# End sequences is newline by default. Whether it is "\n" or "\r\n" depending on the platform
+end_sequence = "\n"
+field_split_char = ","
+# Fields that are defined in the oneline comment style
+needs_fields = [
+    { "name" = "title", "type" = "str" },
+    { "name" = "id", "type" = "str" },
+    { "name" = "type", "type" = "str", "default" = "impl" },
+    { "name" = "links", "type" = "list[str]", "default" = [] },
+]
+
+[codelinks.projects.srccpp.analyse.need_id_refs]
+markers = ["@need-ids:"]
+
+[codelinks.projects.srccpp.analyse.marked_rst]
+start_sequence = "@rst"
+end_sequence = "@endrst"

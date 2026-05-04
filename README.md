@@ -12,4 +12,6 @@ So:
 uv sync --project ./components/comp_1/sphinx-needs
 
 # build documentation
+uv run --project ./components/comp_1/sphinx-needs codelinks analyse components/comp_1/sphinx-needs/codelinks.toml
+uv run --project ./components/comp_1/sphinx-needs codelinks write rst output/marked_content.json --outpath ./components/comp_1/sphinx-needs/needextend.rst --title "Extended needs with codelinks"
 uv run --project ./components/comp_1/sphinx-needs sphinx-build ./components/comp_1/sphinx-needs ./public/comp_1

@@ -47,6 +47,11 @@ jobs:
       run: |
         uv sync --project ./components/comp_1/sphinx-needs
 
+    - name: Analyze and write codelinks
+      run: |
+        uv run --project ./components/comp_1/sphinx-needs codelinks analyse components/comp_1/sphinx-needs/codelinks.toml
+        uv run --project ./components/comp_1/sphinx-needs codelinks write rst output/marked_content.json --outpath ./components/comp_1/sphinx-needs/needextend.rst --title "Extended needs with codelinks"
+
     - name: Render Sphinx Documentation
       run: >
         uv run --project ./components/comp_1/sphinx-needs sphinx-build
